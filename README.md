@@ -2,10 +2,13 @@ I'm Andrea, 16, from Italy. I build AI agents and automation tools, mostly for
 problems I actually run into, and I handle web work for industrial clients
 through my father's firm.
 
+I don't hand-write the code. I work in Claude Code: I decide what gets built and
+usually spot the behaviour that's off, it writes the implementation and finds the
+bugs a few layers down. The calls are mine.
+
 Most of what I've learned lately comes from one recurring problem: an LLM will
-always hand you a confident answer, so the interesting engineering sits in the
-machinery around it that's allowed to say no. Several of these repos are
-variations on that.
+always hand you a confident answer, so the interesting engineering sits in
+whatever is allowed to say no. Several of these repos are variations on that.
 
 **[geopolitical-investment-agent](https://github.com/postagaspa-star/geopolitical-investment-agent)**
 — multi-agent system that reads geopolitical events and runs a simulated
