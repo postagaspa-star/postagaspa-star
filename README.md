@@ -29,6 +29,12 @@ and the backend now strips any verdict field the model tries to slip back in.
 for my father, who works on site with his hands full. Risk classification lives
 in Kotlin, not in the prompt.
 
+**[surplus](https://github.com/postagaspa-star/surplus)** — Android app for
+tracking food and training through a calorie surplus. The one thing here that
+gets used every day rather than built to learn from. It works offline and keeps
+nothing off the phone; that repo is the landing page and the APK releases, not
+the source.
+
 Also worth a look: [devagent](https://github.com/postagaspa-star/devagent), a
 coding agent whose server runs on Render while a local WebSocket bridge gives it
 filesystem access, and
