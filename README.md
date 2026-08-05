@@ -35,6 +35,12 @@ gets used every day rather than built to learn from. It works offline and keeps
 nothing off the phone; that repo is the landing page and the APK releases, not
 the source.
 
+**[pactum](https://github.com/postagaspa-star/pactum)** — parental control
+inverted: the teenager writes their own rules, the parent verifies, and nothing
+is ever blocked. I'm the teenager in it. Since the app can't stop anything, all
+the value sits in whether its log can be trusted, so the strongest check lives
+off the phone — the server watching for heartbeats that stop arriving.
+
 **[task-sync](https://github.com/postagaspa-star/task-sync)** — an evening note
 on Google Keep becomes tomorrow's tasks, spread across four services that all
 have to end up agreeing with each other. Every write is flagged in SQLite before
