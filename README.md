@@ -35,6 +35,11 @@ gets used every day rather than built to learn from. It works offline and keeps
 nothing off the phone; that repo is the landing page and the APK releases, not
 the source.
 
+**[task-sync](https://github.com/postagaspa-star/task-sync)** — an evening note
+on Google Keep becomes tomorrow's tasks, spread across four services that all
+have to end up agreeing with each other. Every write is flagged in SQLite before
+it counts as done, so a job that dies at 2am resumes instead of duplicating.
+
 Also worth a look: [devagent](https://github.com/postagaspa-star/devagent), a
 coding agent whose server runs on Render while a local WebSocket bridge gives it
 filesystem access, and
