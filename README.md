@@ -35,6 +35,12 @@ gets used every day rather than built to learn from. It works offline and keeps
 nothing off the phone; that repo is the landing page and the APK releases, not
 the source.
 
+**[normaai](https://github.com/postagaspa-star/normaai)** — a retrieval
+assistant over an Italian municipality's building and planning rules. In this
+domain a confident wrong answer doesn't stay in a chat window, it ends up in a
+building application, so confidence is computed from how much of the answer is
+actually covered by citations rather than stated by the model.
+
 **[pactum](https://github.com/postagaspa-star/pactum)** — parental control
 inverted: the teenager writes their own rules, the parent verifies, and nothing
 is ever blocked. I'm the teenager in it. Since the app can't stop anything, all
