@@ -1,22 +1,31 @@
 I'm Andrea, 16, from Italy. I build AI agents and automation tools, mostly for
-problems I actually run into, and I handle [web work for industrial
+problems my family and I actually run into, and I handle [web work for industrial
 clients](https://stgm.eu/sitiweb.html) through my father's firm.
 
-I don't hand-write the code. I work in Claude Code: I decide what gets built and
-usually spot the behaviour that's off, while it writes the implementation and
-finds the bugs a few layers down. The product and design calls are mine.
+I don't hand-write the code. I work in Claude Code, often starting from a prompt
+I've drafted in a separate Claude chat: I decide what gets built and in what
+order, and I test it on the real phone, which is where I find most of the
+behaviour that's off. Claude writes the implementation, chooses most
+of the architecture and finds the bugs a few layers down, and it introduces some
+too, which is why the testing stays with me. The product calls are mine and so is
+the last word on design, although the options I pick from usually come from Claude.
 
 Most of what I've learned lately comes from one recurring problem. An LLM will
 always hand you a confident answer, so the interesting engineering sits in
-whatever is allowed to say no. Several of these repos are variations on that.
+whatever is allowed to say no. That isn't my instinct, since I usually want the
+model to do more, so it's a lesson I keep relearning, and several of these repos
+are variations on it.
 
 **[wisper](https://github.com/postagaspa-star/wisper)** lets an industrial
-technician file the daily work report by talking, without touching the phone —
-gloves on, both hands busy, anything that needs a screen has already lost. Two
+technician file the daily work report by talking, without touching the phone:
+gloves on, both hands busy, and anything that needs a screen has already lost. Two
 days, for NGN Hacks 2026. It is also the cleanest example of the rule above: the
 summary Wisper reads back at the end is assembled from the stored fields and
 never written by the model, because a technician who isn't looking at the screen
-hears "forty kilometres" and believes it.
+hears "forty kilometres" and believes it. Then my father, the technician it was
+for, tried it and told me to drop the voice and let him do it by hand, so the
+version now on a branch is a rewrite without it: a phone app for the site, a
+desktop program for invoicing at the office, and the same Google Sheet underneath.
 
 <img src="https://raw.githubusercontent.com/postagaspa-star/wisper/main/docs/immagini/5-scheda.png" width="200"> <img src="https://raw.githubusercontent.com/postagaspa-star/wisper/main/docs/immagini/4-domanda.png" width="200"> <img src="https://raw.githubusercontent.com/postagaspa-star/wisper/main/docs/immagini/3-ascolta.png" width="200">
 
@@ -24,7 +33,7 @@ hears "forty kilometres" and believes it.
 
 **[Arena](https://github.com/postagaspa-star/arena)** reads every project
 submitted to a Devpost hackathon, opens the code they linked, and scores all of
-them against that hackathon's own criteria — mine included, with the names
+them against that hackathon's own criteria, mine included, with the names
 stripped so it can't tell which one is mine. It keeps the model outside the loop:
 it looks at one page of each kind and writes the CSS selectors, then a
 deterministic engine applies them to 900 pages. Three inferences instead of
@@ -50,15 +59,20 @@ can mark a file as verified, so nothing gets to certify its own output.
 screener emitting BUY/HOLD verdicts. I rewrote it to explain companies instead,
 and the backend now strips any verdict field the model tries to slip back in.
 
-**[sol](https://github.com/postagaspa-star/sol)** is an Android voice assistant
-built for my father, who works on site with his hands full. Risk classification
-lives in Kotlin rather than in the prompt.
+**[sol](https://github.com/postagaspa-star/sol)** is a mail assistant for my
+father, whose working day disappears into his inbox. It sorts every message,
+drafts the replies in the background and keeps track of what is still waiting
+for an answer, running on our home NAS with open-weight models only. The models
+have no tools, so a hostile email can at worst produce a bad draft, and nothing
+is sent until he clicks on the exact version he read. It started as a hands-free
+voice assistant, until it became clear that the problem was the inbox rather
+than his hands.
 
 **[surplus](https://github.com/postagaspa-star/surplus)**, an Android app for
 tracking food and training through a calorie surplus. It's the one thing here
 that gets used every day rather than built to learn from. It works offline and
-keeps nothing off the phone. That repo holds the landing page and the APK
-releases; the source isn't published.
+keeps nothing off the phone, and the advice on what to eat next comes from fixed
+rules rather than a model, so it can always say why.
 
 **[normaai](https://github.com/postagaspa-star/normaai)** is a retrieval
 assistant over an Italian municipality's building and planning rules. In this
@@ -67,10 +81,13 @@ building application, so confidence is computed from how much of the answer is
 actually covered by citations rather than stated by the model.
 
 **[pactum](https://github.com/postagaspa-star/pactum)** inverts parental control:
-the teenager writes their own rules, the parent verifies, and nothing is ever
-blocked. I'm the teenager in it. Since the app can't stop anything, all the value
-sits in whether its log can be trusted, so the strongest check lives off the
-phone, on a server watching for heartbeats that stop arriving.
+the teenager writes their own rules and the parent verifies. I'm the teenager in
+it. It started from never blocking anything, and only two exceptions have been
+let in since, both named in the log: a study session I switch on myself, and
+household chores my parents can set, which lock the phone and the computer until
+each one has a photo of the finished job. Everywhere else the app can't stop anything, so the value sits in
+whether its log can be trusted, and the strongest check lives off the phone, on
+a server watching for heartbeats that stop arriving.
 
 **[task-sync](https://github.com/postagaspa-star/task-sync)** turns an evening
 note on Google Keep into tomorrow's tasks, spread across four services that all
@@ -81,4 +98,4 @@ Also worth a look: [devagent](https://github.com/postagaspa-star/devagent), a
 coding agent whose server runs on Render while a local WebSocket bridge gives it
 filesystem access, and
 [stockAI-analyzer](https://github.com/postagaspa-star/stockAI-analyzer), the
-first thing I built in this space, now archived.
+first thing I built in this space, since replaced by stockmind.
